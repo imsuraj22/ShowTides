@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# TideShow
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+## NOTE:- In this application for next high and low tide time I have used World Tides API but there was no such free API to get nearest coast data so that data is hardcoded in JSON file.
 
-### `npm start`
+## URL to access deploy application
+https://show-tides.vercel.app/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Built UI components:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- <h4>TideList:</h4> Fetches and lists nearest coasts with tide data.
 
-### `npm test`
+- <h4>TideCard:</h4> Displays detailed tide information with countdowns, safe windows, and a dynamic tide height chart.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- <h4>MapView:</h4> Interactive map using React-Leaflet showing tide locations with markers and popups.
 
-### `npm run build`
+- <h4>TideChart:</h4> Dynamic line chart displaying tide height cycles using Chart.js and Luxon for date/time formatting.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- <h4>SafeWindows:</h4> Calculates safe time windows for activities like swimming, fishing, and boating based on real tide extremes and presents them in interactive cards.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Output
+![WhatsApp Image 2025-09-04 at 17 24 39](https://github.com/user-attachments/assets/70aad0d5-4b6c-4b53-afe4-9ba09e33ee94)
+![WhatsApp Image 2025-09-04 at 17 25 06](https://github.com/user-attachments/assets/d645d8cc-ded6-437f-9b17-b285df65c717)
+![WhatsApp Image 2025-09-04 at 17 25 58](https://github.com/user-attachments/assets/bb86f4cf-22d7-4e6b-9445-4dc1ede8a014)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation Instructions
 
-### `npm run eject`
+To get the project running locally on your machine, follow these steps:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. **Clone the repository:**
+   git clone https://github.com/imsuraj22/ShowTides.git
+2. **Install the dependencies:**
+   Using npm:
+   npm install
+   Or using yarn:
+   yarn
+3. **Start the development server:**
+   npm start
+   
+This will launch the app in development mode. Open [http://localhost:3000](http://localhost:3000) in your browser to see it. The page will reload automatically as you make changes.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Environment Variables Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This project requires a World Tides API key to fetch tide data securely without exposing it in the codebase.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To set this up:
 
-## Learn More
+1. **Create a `.env` file in the root of the project directory (same level as `package.json`).**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. **Add the following environment variable in `.env`:**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+REACT_APP_WORLD_TIDES_KEY=your_actual_api_key_here
 
-### Code Splitting
+Replace `your_actual_api_key_here` with your real API key from [World Tides API](https://www.worldtides.info/).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. **Ensure `.env` is added to `.gitignore` to prevent it from being committed and exposing your key.**
 
-### Analyzing the Bundle Size
+4. **In the app code, the API key is accessed via:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+const WORLD_TIDES_KEY = process.env.REACT_APP_WORLD_TIDES_KEY;
 
-### Making a Progressive Web App
+5. **Restart the development server if it was running to load the new environment variable.**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Feel free to contribute, raise issues or suggest features to help improve the project!
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
